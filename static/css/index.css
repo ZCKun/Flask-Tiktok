@@ -1,0 +1,337 @@
+* {
+    box-sizing: border-box;
+}
+
+/* 切换背景颜色 start */
+:root {
+    --primary-color: #1B1E24;
+    --secondary-color: #1B1E24;
+    --font-color: #1B1E24;
+    --bg-color: #fff;
+    --heading-color: #1B1E24;
+    --shadow-color: rgba(0, 0, 0, .2);
+    --card-color: rgba(0, 0, 0, 0.02);
+}
+
+[data-theme="dark"] {
+    --primary-color: #fff;
+    --secondary-color: #fff;
+    --font-color: #fff;
+    --bg-color: #1B1E24;
+    --heading-color: #fff;
+    --shadow-color: rgba(253, 219, 39, 0.44);
+    --card-color: rgba(0, 0, 0, 0);
+}
+
+body {
+    background-color: var(--bg-color);
+    /*text-align: center;*/
+}
+
+.header {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 10vh;
+}
+
+/*切换主题控件*/
+.switch-theme {
+    position: absolute;
+    /*position:fixed;*/
+    top: 10px;
+    right: 20px;
+}
+
+.moon, .sun {
+    width: 34px;
+    cursor: pointer;
+    transition: .5s all ease-in-out;
+}
+
+.sun:hover {
+    animation: sun_rotate 1s infinite;
+}
+
+.moon:hover {
+    transform: scale(1.1);
+}
+
+.hide {
+    display: none;
+}
+
+/*根据当前主题更改文本颜色*/
+.nickname .video-desc .signature {
+    color: var(--primary-color);
+    font-family: "Dosis", sans-serif;
+    text-shadow: 1px 1px 1px var(--shadow-color);
+}
+
+.nickname {
+    background: #FB8C00;
+    /*color: #222;*/
+    padding: 1rem 2rem 1rem 3rem;
+    font: bold 10px system-ui;
+    clip-path: polygon(20px 0%, 100% 0%, 100% 100%, 20px 100%, 0 50%);
+}
+
+.signature {
+    background: #9ca9fb;
+    /*color: #222;*/
+    padding: 1rem 2rem 1rem 3rem;
+    font: bold 10px system-ui;
+    clip-path: polygon(0 0%, 100% 0%, 100% 100%, 0 100%, 0 50%);
+}
+
+.video-desc {
+    font-size: 1rem;
+}
+
+.signature {
+    font-size: 0.5rem;
+}
+
+.nn-wrap .st-wrap {
+    filter: drop-shadow(-1px 6px 3px rgba(50, 50, 0, 0.5));
+}
+
+
+/* Animations */
+
+@keyframes sun_rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* 切换背景 end */
+
+/*加载更多 */
+
+.circle {
+    background-color: rgb(219, 81, 138);
+    /* border-radius: 50px; */
+    display: inline-block;
+    margin: 10px;
+    height: 40px;
+    width: 40px;
+}
+
+
+.circle:nth-of-type(2) {
+    background-color: rgb(216, 112, 112);
+}
+
+.circle:nth-of-type(3) {
+    background-color: rgb(112, 161, 216);
+}
+
+.loading-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.circle:nth-of-type(1) {
+    animation: grow-fast 2.4s linear infinite;
+    transform: scale(1.1);
+}
+
+.circle:nth-of-type(2) {
+    animation: grow 2.5s linear infinite;
+    transform: scale(1.1);
+}
+
+.circle:nth-of-type(3) {
+
+    animation: grow-faster 2.3s linear infinite;
+    transform: scale(1.1);
+}
+
+@keyframes grow {
+    0% {
+        border-radius: 0%;
+    }
+    20% {
+        border-radius: 0% 0 0 0;
+    }
+    40% {
+        border-radius: 0% 50% 0 0;
+        transform: scale(1)
+    }
+    60% {
+        border-radius: 35% 50% 0% 0;
+    }
+    80% {
+        border-radius: 50% 50% 50% 0;
+
+    }
+    100% {
+        border-radius: 50%;
+    }
+    0% {
+        border-radius: 50%;
+    }
+}
+
+@keyframes grow-fast {
+    0% {
+        border-radius: 0%;
+    }
+    20% {
+        border-radius: 0% 0 0 0;
+    }
+    40% {
+        border-radius: 0% 50% 0 0;
+    }
+    60% {
+        border-radius: 35% 50% 0% 0;
+        transform: scale(1)
+    }
+    80% {
+        border-radius: 50% 50% 50% 0;
+    }
+    100% {
+        border-radius: 50%;
+
+    }
+    0% {
+        border-radius: 50%;
+    }
+}
+
+@keyframes grow-faster {
+    0% {
+        border-radius: 0%;
+    }
+    20% {
+        border-radius: 0% 0 0 0;
+    }
+    40% {
+        border-radius: 0% 50% 0 0;
+    }
+    60% {
+        border-radius: 35% 50% 0% 0;
+        transform: scale(1)
+    }
+    80% {
+        border-radius: 50% 50% 50% 0;
+    }
+    100% {
+        border-radius: 50%;
+    }
+    0% {
+        border-radius: 50%;
+    }
+}
+
+/* done */
+
+/*炮王动画*/
+/*.head {*/
+/*position: fixed;*/
+/*animation: 50s headpopping infinite;*/
+/*top: 0;*/
+/*left: 0;*/
+/*transform: translateY(-50vh) rotate(180deg);*/
+/*}*/
+
+/*@keyframes headpopping {*/
+/*3%, 8% { transform: translateY(-50vh)  rotate(180deg)}*/
+/*6% { transform: translateY(0)  rotate(180deg)}*/
+/*10% { transform: translateY(-50vh)  translateX(110vw) rotate(270deg)}*/
+/*12%, 20% { transform: translateY(50vh)  translateX(110vw) rotate(270deg)}*/
+/*15% { transform: translateY(50vh)  translateX(80vw) rotate(270deg)}*/
+/*22% { transform: translateY(50vh)  translateX(110vw) rotate(0)}*/
+/*24% { transform: translateY(110vh)  translateX(110vw) rotate(0)}*/
+/*26%, 30% { transform: translateY(110vh)  translateX(70vw) rotate(0)}*/
+/*28% { transform: translateY(80vh)  translateX(70vw) rotate(0)}*/
+/*32% { transform: translateY(110vh)  translateX(70vw) rotate(90deg)}*/
+/*34% { transform: translateY(110vh)  translateX(-50vw) rotate(90deg)}*/
+/*36%, 40% { transform: translateY(30vh)  translateX(-50vw) rotate(90deg)}*/
+/*38% { transform: translateY(30vh)  translateX(0) rotate(90deg)}*/
+/*42% { transform: translateY(-45vh)  translateX(-50vw) rotate(230deg)}*/
+/*44%, 48% { transform: translateY(-45vh)  translateX(100vw) rotate(230deg)}*/
+/*46% { transform: translateY(-3vh)  translateX(85vw) rotate(230deg)}*/
+/*50% { transform: translateY(-45vh)  translateX(100vw) rotate(180deg)}*/
+/*52%, 56% { transform: translateY(-45vh)  translateX(50vw) rotate(180deg)}*/
+/*54% { transform: translateY(0)  translateX(50vw) rotate(180deg)}*/
+/*58% { transform: translateY(-45vh)  translateX(-50vw) rotate(0)}*/
+/*60% { transform: translateY(115vh)  translateX(-50vw) rotate(0)}*/
+/*62%, 65% { transform: translateY(75vh)  translateX(0) rotate(0)}*/
+/*72% { transform: translateY(85vh)  translateX(53vw) rotate(0)}*/
+/*74% { transform: translateY(110vh)  translateX(53vw) rotate(0)}*/
+/*76% { transform: translateY(110vh)  translateX(53vw) rotate(90deg)}*/
+/*78% { transform: translateY(110vh)  translateX(-50vw) rotate(90deg)}*/
+/*80%, 88% { transform: translateY(15vh)  translateX(-50vw) rotate(90deg)}*/
+/*82% { transform: translateY(15vh)  translateX(0) rotate(90deg)}*/
+/*83% { transform: translateY(15vh)  translateX(0) rotate(98deg)}*/
+/*84% { transform: translateY(15vh)  translateX(0) rotate(83deg)}*/
+/*85% { transform: translateY(15vh)  translateX(0) rotate(92deg)}*/
+/*86% { transform: translateY(15vh)  translateX(0) rotate(87deg)}*/
+/*90% { transform: translateY(15vh)  translateX(-50vw) rotate(180deg)}*/
+/*92% { transform: translateY(-50vh)  translateX(-50vw) rotate(180deg)}*/
+/*94% { transform: translateY(-50vh)  translateX(0) rotate(180deg)}*/
+/*}*/
+
+.avatar {
+    width: 3.41333333rem;
+    height: 3.41333333rem;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.video-container {
+    margin: 20px 0 20px 0;
+}
+
+.video-info {
+    text-align: center;
+}
+
+.video {
+    width: 40%;
+    height: 30%;
+    margin-top: 5px;
+}
+
+.avatar_thumb {
+    width: auto;
+    height: 100%;
+    vertical-align: top;
+    /*-webkit-transform: translateX(-50%);*/
+    /*transform: translateX(-50%);*/
+    /*margin-left: 50%;*/
+}
+
+
+.container {
+    display: table;
+    margin: 0 auto;
+}
+
+.author-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+/*卡片效果*/
+.video-card {
+    margin-top: 10%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    border-radius: 5px;
+}
+
+.video-card:hover {
+    box-shadow: 0 10px 16px 0 rgba(0, 0, 0, 0.2);
+}
